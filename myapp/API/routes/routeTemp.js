@@ -13,11 +13,12 @@ router.get('/' ,function (req, res) {
 })
 
 router.post('/',function(req,res){
-   temp.addTemp(req.body.tempreture, req.body.roomID, function(err, user) {
-    if (err) return next(err);
-     res.send(user);
-   })
+  
+      temp.editTemp(req.body.tempreture, req.body.roomID, function(err, user) {
+       if (err) return next(err);
+        res.send(user);
 
+  })
 })
 
 
