@@ -6,10 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('./Utilities/db');
 var app = express();
-var users = require('./routes/routeUsers');
-var status = require('./routes/routeStatus');
-var comments = require('./routes/routeComments');
-var authenticate = require('./Authenticate');
+var temp = require('./routes/routeTemp');
+
+
 var config = require('./config');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
@@ -21,8 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 db.connectDB(); // CONNECT TO DATABASE
 
 //SETTING UP ROUTES
-app.use('/authenticate', authenticate);
-app.use('/users', users);
-app.use('/status', status);
-app.use('/comments', comments);
+
+app.use('/temp', temp);
+
 module.exports = app;
