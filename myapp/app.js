@@ -26,7 +26,9 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
+var listener = app.listen(8081, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8081
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
