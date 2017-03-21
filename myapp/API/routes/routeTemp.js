@@ -12,6 +12,13 @@ router.get('/' ,function (req, res) {
   })
 })
 
+router.get('/:roomID' ,function (req, res) {
+  temp.findTemp(req.params.roomID, function (err, temp) {
+    res.send(temp);
+  })
+})
+
+
 router.post('/',function(req,res){
   
       temp.editTemp(req.body.tempreture, req.body.roomID, function(err, user) {

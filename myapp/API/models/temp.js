@@ -2,10 +2,10 @@ var db = require('../Utilities/db')
 
 
 module.exports.findTemp = function(roomID, cb) {
-var collection = db.get().collection('temp');
-  collection.find({ "roomID": roomID } ).toArray(function(err, user) {
-    cb(err, user)
-  })
+  var collection = db.get().collection('temp');
+    collection.find({ roomID : roomID }).toArray(function (err, temp) {        
+        cb(err, temp)
+    })
 }
 
 module.exports.getTemp = function (cb) {
@@ -14,6 +14,8 @@ module.exports.getTemp = function (cb) {
         cb(err, temp)
     })
 }
+
+
 
 module.exports.editTemp = function (temp, roomID, cb) {
     var collection = db.get().collection('temp');
