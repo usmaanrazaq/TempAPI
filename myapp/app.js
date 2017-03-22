@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'FitnessTracker'))); //LOOK FOR STATIC FILES IN THE FITNESSTRACKER FOLDER
 
 app.use(function(req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "http://localhost:56564");
-  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, DXscript, DXCss ");
+  res.header("Access-Control-Allow-Origin", "http://localhost:56564");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, DXscript, DXCss ");
   next();
 });
 //API SERVICE

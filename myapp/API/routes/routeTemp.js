@@ -21,9 +21,9 @@ router.get('/:roomID' ,function (req, res) {
 
 router.post('/',function(req,res){
   
-      temp.editTemp(req.body.tempreture, req.body.roomID, function(err, user) {
+      temp.editTemp(req.body.tempreture, req.body.roomID, function(err, status) {
        if (err) return next(err);
-        res.send(user);
+        res.send(status);
 
   })
 })
